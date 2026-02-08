@@ -14,7 +14,14 @@ const UserSchema = new mongoose.Schema({
         required: true,
         unique: true,
         trim: true
-    }
+    },
+    role: {
+        type: String,
+        enum: {
+            values: ['admin', 'normal'],
+            message: '{VALUE} is not a valid user role!'
+        }
+    },
 }, {
     timestamps: true
 })
