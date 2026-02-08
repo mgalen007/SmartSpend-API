@@ -12,11 +12,22 @@ const transactionSchema = new mongoose.Schema({
     },
     amount: {
         type: Number,
-        required: true
+        required: true,
+        min: [0, 'Minimum value is 0!']
     },
     date: {
         type: Date,
+        default: Date.now
+    },
+    description: {
+        type: String,
         required: true
+    },
+    category: {
+        type: String,
+        enum: {
+            values: ['Food', 'Transport', 'Bills', 'Entertainment', 'Income']
+        }
     }
 })
 
