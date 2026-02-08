@@ -8,10 +8,13 @@ const userRoutes = require('./routes/user')
 const transactionRoutes = require('./routes/transaction')
 const budgetRoutes = require('./routes/budget')
 const logger = require('./middleware/logger')
+const connectDB = require('./config/connection')
 const PORT = process.env.PORT || 4000
 
+// Connect to the database
+connectDB()
 
-// Create the server
+// Initialize the server
 const app = express()
 
 // Middleware

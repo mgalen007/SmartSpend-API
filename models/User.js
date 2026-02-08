@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 // Create a user schema
-const UserSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
     role: {
         type: String,
         enum: {
-            values: ['admin', 'normal'],
+            values: ['admin', 'user'],
             message: '{VALUE} is not a valid user role!'
         }
     },
