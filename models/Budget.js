@@ -17,3 +17,7 @@ const budgetSchema = new mongoose.Schema({
         default: []
     }
 })
+
+// Create and export Budget model
+const Budget = mongoose.model('Budget', budgetSchema)
+module.exports = Budget
