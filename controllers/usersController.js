@@ -1,5 +1,7 @@
-const User = require('../models/User')
 const mongoose = require('mongoose')
+const Transaction = require('../models/Transaction')
+const User = require('../models/User')
+const Account = require('../models/Account')
 
 // Controller functions
 exports.getAllUsers = async (req, res) => {
@@ -81,7 +83,17 @@ exports.updateUser = async (req, res) => {
 }
 
 exports.getAllUserTransactions = async (req, res) => {
+    try {
+        if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+            return res.status(400).json({ error: "Invalid user ID format" })
+        }
 
+        const transactions = await Transaction.find({ userId: req.params.id })
+        res.json(transactions)
+    } catch(err) {
+        console.log("The ERROR:",err)
+        res.status(500).json({ error: "Failed to get transactions" })
+    }
 }
 
 exports.createTransaction = async (req, res) => {

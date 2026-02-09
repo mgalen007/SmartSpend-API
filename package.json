@@ -7,5 +7,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
+  },
+  "scripts": {
+    "devStart": "nodemon server.js"
   }
 }
