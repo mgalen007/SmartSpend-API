@@ -79,3 +79,43 @@ exports.updateUser = async (req, res) => {
         res.status(500).json({ message: "Failed to modify user" })
     }
 }
+
+exports.getAllUserTransactions = async (req, res) => {
+
+}
+
+exports.createTransaction = async (req, res) => {
+
+}
+
+exports.getTransactionById = async (req, res) => {
+
+}
+
+exports.updateTransaction = async (req, res) => {
+
+}
+
+exports.deleteTransaction = async (req, res) => {
+
+}
+
+exports.getAllUserAccounts = async (req, res) => {
+
+}
+
+exports.createAccount = async (req, res) => {
+
+}
+
+exports.getAccountById = async (req, res) => {
+
+}
+
+exports.updateAccount = async (req, res) => {
+
+}
+
+exports.deleteAccount = async (req, res) => {
+    
+}

@@ -26,7 +26,7 @@ router.route('/:id/transactions/:trId')
 // User accounts
 router.route('/:id/accounts')
     .get(usersController.getAllUserAccounts)
-    .post(usersController.createNewAccount)
+    .post(usersController.createAccount)
 
 router.route('/:id/accounts/:id')
     .get(usersController.getAccountById)
