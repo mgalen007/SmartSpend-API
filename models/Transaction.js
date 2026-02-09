@@ -19,6 +19,10 @@ const transactionSchema = new mongoose.Schema({
         required: true,
         min: [0, 'Minimum value is 0!']
     },
+    currency: {
+        type: String,
+        required: true
+    },
     date: {
         type: Date,
         default: Date.now
