@@ -28,10 +28,8 @@ const transactionSchema = new mongoose.Schema({
         required: true
     },
     category: {
-        type: String,
-        enum: {
-            values: ['Food', 'Transport', 'Bills', 'Entertainment', 'Income']
-        }
+        type: mongoose.Types.ObjectId,
+        required: true
     }
 })
 

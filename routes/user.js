@@ -12,4 +12,9 @@ router.route('/:id')
     .patch(usersController.updateUser)
     .delete(usersController.deleteUser)
 
+router.route('/:id/transactions')
+    .get(usersController.getAllUserTransactions)
+    .post(usersController.createTransaction)
+
+
 module.exports = router
