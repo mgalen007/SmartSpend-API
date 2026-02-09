@@ -8,9 +8,13 @@ const accountSchema = new mongoose.Schema({
     accountType: {
         type: String,
         enum: {
-            values: ['Savings', 'Mobile Money', 'Cash', 'Bank', 'Credit'],
+            values: ['savings', 'mobile money', 'cash', 'bank', 'credit'],
             message: '{VALUE} is not a valid account type!'
         },
+        required: true
+    },
+    balance: {
+        type: Number,
         required: true
     }
 }, {
